@@ -23,10 +23,6 @@ const routes: Routes = [
     path: 'edit',
     loadChildren: () => import('./edit/edit.module').then( m => m.EditPageModule)
   },
-  {
-    path: 'staff-edit',
-    loadChildren: () => import('./staff-edit/staff-edit.module').then( m => m.StaffEditPageModule)
-  },
 ];
 
 @NgModule({
