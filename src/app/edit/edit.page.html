@@ -8,7 +8,7 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <textarea name="public-content-editable" id="public-content-editable">Public Content Goes Here</textarea>
+        <textarea [(ngModel)]="content" name="public-content-editable" id="public-content-editable">Public Content Goes Here</textarea>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -16,7 +16,8 @@
         <ion-button expand="block">Cancel</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button expand="block">Save</ion-button>
+        <ion-button (click)="editPublicContent()" expand="block">Save Public Content</ion-button>
+        <ion-button (click)="editStaffContent()" expand="block">Save Staff Content</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

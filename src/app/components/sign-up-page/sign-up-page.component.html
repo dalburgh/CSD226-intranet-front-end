@@ -11,17 +11,17 @@
   <div class="ion-margin">
     <ion-item class="ion-margin">
       <ion-label position="floating">Email</ion-label>
-      <ion-input placeholder="example@email.com" type="email"></ion-input>
+      <ion-input [(ngModel)]="email" placeholder="example@email.com" type="email"></ion-input>
       <ion-note slot="error">Invalid email</ion-note>
     </ion-item>
     <ion-item class="ion-margin">
       <ion-label position="floating">First Name</ion-label>
-      <ion-input placeholder="John"></ion-input>
+      <ion-input [(ngModel)]="firstName" placeholder="John"></ion-input>
       <ion-note slot="error">Please complete this field</ion-note>
     </ion-item>
     <ion-item class="ion-margin">
       <ion-label position="floating">Last Name</ion-label>
-      <ion-input placeholder="Smith"></ion-input>
+      <ion-input [(ngModel)]="lastName" placeholder="Smith"></ion-input>
       <ion-note slot="error">Please complete this field</ion-note>
     </ion-item>
     <ion-item class="ion-margin">
@@ -31,7 +31,7 @@
     </ion-item>
     <ion-item class="ion-margin">
       <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" placeholder=""></ion-input>
+      <ion-input [(ngModel)]="password" type="password" placeholder=""></ion-input>
       <ion-note slot="helper">Ensure your password is at least 8 characters and include one uppercase letter, one lowercase letter, a number, and a special character</ion-note>
       <ion-note slot="error">Ensure your password meets the specifications</ion-note>
     </ion-item>
@@ -42,7 +42,7 @@
     </ion-item>
 
     <ion-row class="ion-margin ion-justify-content-evenly">
-      <ion-button shape="round" size="large">
+      <ion-button (click)="signUp()" shape="round" size="large">
         Sign Up
         <ion-icon slot="end" name="person-add-outline"></ion-icon>
       </ion-button>
