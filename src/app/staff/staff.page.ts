@@ -12,10 +12,10 @@ export class StaffPage implements OnInit {
   content: any;
 
   constructor(private api: ApiService) {
-    this.getStaffContent();
   }
 
   ngOnInit() {
+    this.getStaffContent();
   }
 
   getStaffContent() {
