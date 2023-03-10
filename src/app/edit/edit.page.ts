@@ -19,6 +19,10 @@ export class EditPage implements OnInit {
   }
 
   editPublicContent() {
+    if (this.checkToken() == false) {
+      alert("No access token stored, Please log in to edit content.");
+      return;
+    }
     const publicContent = { registryKey: "public_content", registryValue: this.content };
     this.api.callPut(EndPoints.PUBLIC_CONTENT, publicContent)
       .then((response: AxiosResponse) => {
@@ -30,6 +34,10 @@ export class EditPage implements OnInit {
   }
 
   editStaffContent() {
+    if (this.checkToken() == false) {
+      alert("No access token stored, Please log in to edit content.");
+      return;
+    }
     const staffContent = { registryKey: "staff_content", registryValue: this.content };
     this.api.callPut(EndPoints.STAFF_CONTENT, staffContent)
       .then((response: AxiosResponse) => {
@@ -38,6 +46,13 @@ export class EditPage implements OnInit {
       .catch((error) => {
         console.log(error)
       })
+  }
+
+  checkToken() {
+    if (this.api.getAccessToken() == '') {
+      return false;
+    }
+    return true;
   }
 }
 
